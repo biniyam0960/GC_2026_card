@@ -1,0 +1,3208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Graduation Class of 2026 – ELECTRICAL AND Computer ENGINEERING Yearbook</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #F0CC7A;
+    --gold-dim: #8A6F2E;
+    --blue: #1A3A6B;
+    --blue-mid: #2558A8;
+    --blue-bright: #4A90D9;
+    --black: #080C14;
+    --near-black: #0E1420;
+    --dark: #141B2D;
+    --card-bg: rgba(20,27,45,0.85);
+    --glass: rgba(255,255,255,0.04);
+    --glass-border: rgba(201,168,76,0.18);
+    --white: #FAFAFA;
+    --muted: #8B96A8;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'DM Sans', sans-serif;
+    --mono: 'Space Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: var(--sans);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── SCROLLBAR ── */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--black); }
+  ::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 2px; }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 48px;
+    background: rgba(8,12,20,0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--glass-border);
+  }
+  .nav-logo { font-family: var(--serif); font-size: 1.1rem; color: var(--gold); letter-spacing: .08em; }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a { font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color .3s; }
+  .nav-links a:hover { color: var(--gold); }
+
+  /* ── SHARED ── */
+  section { position: relative; }
+  .section-label {
+    font-family: var(--mono); font-size: .65rem; letter-spacing: .25em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: var(--serif); font-weight: 300;
+    font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.1;
+    letter-spacing: -.01em;
+  }
+  .section-title em { font-style: italic; color: var(--gold-light); }
+  .gold-line {
+    width: 60px; height: 1px; background: linear-gradient(90deg, var(--gold), transparent);
+    margin: 20px 0 40px;
+  }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+
+  /* ── STAR FIELD ── */
+  .stars {
+    position: absolute; inset: 0; pointer-events: none; overflow: hidden;
+  }
+  .stars::before, .stars::after {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(1px 1px at 10% 15%, rgba(255,255,255,.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 30% 60%, rgba(255,255,255,.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 55% 25%, rgba(255,255,255,.6) 0%, transparent 100%),
+      radial-gradient(1px 1px at 75% 70%, rgba(255,255,255,.3) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 85% 10%, rgba(201,168,76,.6) 0%, transparent 100%),
+      radial-gradient(1px 1px at 20% 85%, rgba(255,255,255,.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 65% 90%, rgba(255,255,255,.3) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 40% 40%, rgba(201,168,76,.4) 0%, transparent 100%);
+  }
+
+  /* ── COVER ── */
+  #cover {
+    min-height: 100vh;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding: 120px 40px 80px;
+    background: radial-gradient(ellipse 80% 70% at 50% 30%, #0D1F44 0%, var(--black) 70%);
+    overflow: hidden;
+  }
+  .cover-glow {
+    position: absolute; top: -20%; left: 50%; transform: translateX(-50%);
+    width: 800px; height: 500px;
+    background: radial-gradient(ellipse, rgba(37,88,168,.25) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .cover-glow-gold {
+    position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+    width: 600px; height: 300px;
+    background: radial-gradient(ellipse, rgba(201,168,76,.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .univ-logo-placeholder {
+    width: 90px; height: 90px; border-radius: 50%;
+    border: 2px solid var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    margin-bottom: 24px;
+    font-family: var(--serif); font-size: 1.6rem; color: var(--gold);
+    letter-spacing: .05em;
+    box-shadow: 0 0 40px rgba(201,168,76,.2);
+  }
+  .cover-year {
+    font-family: var(--mono); font-size: .7rem; letter-spacing: .4em;
+    color: var(--gold); text-transform: uppercase; margin-bottom: 16px;
+  }
+  .cover-title {
+    font-family: var(--serif); font-weight: 300;
+    font-size: clamp(3rem, 9vw, 7rem); line-height: .95;
+    letter-spacing: -.02em; margin-bottom: 16px;
+  }
+  .cover-title span { display: block; color: var(--gold-light); font-style: italic; }
+  .cover-dept {
+    font-family: var(--sans); font-weight: 300; font-size: .9rem;
+    letter-spacing: .2em; text-transform: uppercase; color: var(--muted);
+    margin-bottom: 40px;
+  }
+  .cover-quote {
+    font-family: var(--serif); font-style: italic; font-size: 1.25rem;
+    color: rgba(250,250,250,.6); max-width: 520px; line-height: 1.7;
+    border-left: 2px solid var(--gold-dim); padding-left: 20px;
+    text-align: left; margin: 0 auto 60px;
+  }
+
+  /* Class photo placeholder */
+  .class-photo-placeholder {
+    width: 100%; max-width: 820px;
+    aspect-ratio: 16/7;
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 12px; color: var(--muted); margin: 0 auto;
+    position: relative; overflow: hidden;
+  }
+  .class-photo-placeholder::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(37,88,168,.1) 0%, rgba(201,168,76,.05) 100%);
+  }
+  .class-photo-placeholder .cam-icon { font-size: 2.5rem; opacity: .4; }
+  .class-photo-placeholder p { font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; }
+  .photo-upload-hint { font-size: .7rem; color: var(--gold-dim); font-family: var(--mono); }
+
+  /* cap decoration */
+  .cap-row { display: flex; gap: 16px; margin-bottom: 24px; }
+  .cap { font-size: 2rem; }
+  .cap-sm { font-size: 1.2rem; opacity: .5; }
+
+  /* ── WELCOME ── */
+  #welcome {
+    padding: 120px 0;
+    background: linear-gradient(180deg, var(--black) 0%, var(--near-black) 100%);
+  }
+  .welcome-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; margin-top: 60px; }
+  .welcome-card {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    padding: 48px 40px;
+    position: relative; overflow: hidden;
+  }
+  .welcome-card:first-child { border-radius: 16px 0 0 16px; }
+  .welcome-card:last-child { border-radius: 0 16px 16px 0; }
+  .welcome-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+  }
+  .welcome-card-tag {
+    font-family: var(--mono); font-size: .6rem; letter-spacing: .2em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 8px;
+  }
+  .welcome-card h3 {
+    font-family: var(--serif); font-size: 1.6rem; font-weight: 400;
+    margin-bottom: 20px; line-height: 1.2;
+  }
+  .welcome-card p { font-size: .88rem; color: rgba(250,250,250,.7); line-height: 1.8; }
+  .avatar-row { display: flex; gap: 12px; margin-top: 28px; }
+  .avatar {
+    width: 44px; height: 44px; border-radius: 50%;
+    border: 1px solid var(--glass-border);
+    background: var(--glass);
+    display: flex; align-items: center; justify-content: center;
+    font-size: .75rem; color: var(--gold);
+  }
+  .avatar-info { display: flex; flex-direction: column; justify-content: center; }
+  .avatar-name { font-size: .82rem; font-weight: 500; }
+  .avatar-role { font-size: .7rem; color: var(--muted); }
+
+  /* Lecturer appreciation */
+  .lecturer-row {
+    display: flex; flex-wrap: wrap; gap: 16px; margin-top: 60px;
+  }
+  .lecturer-chip {
+    display: flex; align-items: center; gap: 12px;
+    background: var(--glass); border: 1px solid var(--glass-border);
+    padding: 12px 20px; border-radius: 100px;
+    font-size: .8rem;
+  }
+  .lecturer-chip .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+
+  /* ── STUDENTS ── */
+  #students { padding: 120px 0; background: var(--near-black); }
+  .students-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 60px; }
+  .student-card {
+    background: var(--card-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform .3s, box-shadow .3s;
+    cursor: default;
+  }
+  .student-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 60px rgba(0,0,0,.5), 0 0 0 1px rgba(201,168,76,.3);
+  }
+  .student-photo {
+    width: 100%; aspect-ratio: 3/3.5;
+    background: linear-gradient(135deg, var(--blue) 0%, #0A1628 100%);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 10px; color: var(--muted); position: relative; overflow: hidden;
+  }
+  .student-photo::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0; height: 60px;
+    background: linear-gradient(transparent, var(--card-bg));
+  }
+  .student-photo .photo-icon { font-size: 3rem; opacity: .25; }
+  .student-photo .photo-label {
+    font-size: .65rem; letter-spacing: .15em; text-transform: uppercase;
+    opacity: .5; font-family: var(--mono);
+  }
+  .student-photo .student-number {
+    position: absolute; top: 14px; left: 14px;
+    font-family: var(--mono); font-size: .6rem; letter-spacing: .1em;
+    color: var(--gold); background: rgba(8,12,20,.7); padding: 4px 10px; border-radius: 100px;
+  }
+  .student-body { padding: 24px; }
+  .student-name { font-family: var(--serif); font-size: 1.35rem; font-weight: 600; margin-bottom: 2px; }
+  .student-id { font-family: var(--mono); font-size: .62rem; color: var(--gold-dim); letter-spacing: .1em; margin-bottom: 14px; }
+  .student-quote {
+    font-family: var(--serif); font-style: italic; font-size: .9rem;
+    color: rgba(250,250,250,.6); border-left: 2px solid var(--gold-dim);
+    padding-left: 12px; margin-bottom: 16px; line-height: 1.6;
+  }
+  .student-meta { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+  .meta-row { display: flex; gap: 8px; align-items: flex-start; font-size: .75rem; }
+  .meta-label { color: var(--gold-dim); font-weight: 500; min-width: 70px; }
+  .meta-val { color: rgba(250,250,250,.75); }
+  .skills-row { display: flex; flex-wrap: wrap; gap: 6px; }
+  .skill-tag {
+    font-size: .62rem; letter-spacing: .08em; text-transform: uppercase;
+    padding: 3px 10px; border-radius: 100px;
+    border: 1px solid var(--glass-border); color: var(--muted);
+  }
+  .student-footer {
+    padding: 14px 24px; border-top: 1px solid var(--glass-border);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .connect-label { font-size: .65rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  .connect-icons { display: flex; gap: 10px; }
+  .connect-icons span { font-size: 1rem; cursor: pointer; opacity: .5; transition: opacity .2s; }
+  .connect-icons span:hover { opacity: 1; }
+
+  /* ── MEMORY WALL ── */
+  #memories { padding: 120px 0; background: var(--black); }
+  .memory-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 200px; gap: 12px; margin-top: 60px; }
+  .memory-cell {
+    border-radius: 12px; overflow: hidden; position: relative;
+    border: 1px solid var(--glass-border);
+    background: var(--glass);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 8px; cursor: pointer; transition: opacity .3s;
+  }
+  .memory-cell:hover { opacity: .85; }
+  .memory-cell.wide { grid-column: span 2; }
+  .memory-cell.tall { grid-row: span 2; }
+  .memory-cell::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(37,88,168,.15), rgba(201,168,76,.08));
+  }
+  .memory-emoji { font-size: 2.2rem; position: relative; z-index: 1; }
+  .memory-label {
+    font-size: .7rem; letter-spacing: .12em; text-transform: uppercase;
+    color: rgba(250,250,250,.5); position: relative; z-index: 1; text-align: center; padding: 0 10px;
+  }
+  .memory-tag {
+    font-family: var(--mono); font-size: .55rem; color: var(--gold-dim);
+    position: absolute; bottom: 10px; right: 12px; z-index: 1;
+  }
+  .photo-upload-overlay {
+    position: absolute; inset: 0; z-index: 2;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 8px; opacity: 0; transition: opacity .3s;
+    background: rgba(8,12,20,.7);
+    font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--gold);
+  }
+  .memory-cell:hover .photo-upload-overlay { opacity: 1; }
+
+  /* ── TIMELINE ── */
+  #timeline { padding: 120px 0; background: var(--near-black); overflow: hidden; }
+  .timeline-track {
+    position: relative; margin-top: 80px;
+    display: flex; flex-direction: column; gap: 0;
+  }
+  .timeline-line {
+    position: absolute; left: 50%; transform: translateX(-50%);
+    top: 0; bottom: 0; width: 1px;
+    background: linear-gradient(180deg, transparent, var(--gold-dim) 15%, var(--gold) 50%, var(--gold-dim) 85%, transparent);
+  }
+  .tl-item {
+    display: grid; grid-template-columns: 1fr 60px 1fr;
+    align-items: center; gap: 0; padding: 16px 0;
+  }
+  .tl-left { text-align: right; padding-right: 40px; }
+  .tl-right { text-align: left; padding-left: 40px; }
+  .tl-left.empty, .tl-right.empty { opacity: 0; }
+  .tl-dot {
+    width: 16px; height: 16px; border-radius: 50%;
+    background: var(--black); border: 2px solid var(--gold);
+    margin: 0 auto; position: relative; z-index: 1;
+    box-shadow: 0 0 12px rgba(201,168,76,.5);
+  }
+  .tl-dot.major {
+    width: 22px; height: 22px;
+    background: var(--gold); border-color: var(--gold-light);
+  }
+  .tl-year {
+    font-family: var(--mono); font-size: .65rem; color: var(--gold);
+    letter-spacing: .15em; margin-bottom: 4px;
+  }
+  .tl-title { font-family: var(--serif); font-size: 1.15rem; font-weight: 600; margin-bottom: 4px; }
+  .tl-desc { font-size: .78rem; color: var(--muted); line-height: 1.6; }
+
+  /* ── HIGHLIGHTS ── */
+  #highlights { padding: 120px 0; background: var(--black); }
+  .highlights-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 60px; }
+  .highlight-card {
+    border: 1px solid var(--glass-border);
+    border-radius: 16px; padding: 32px 28px;
+    background: var(--glass);
+    position: relative; overflow: hidden;
+    transition: transform .3s;
+  }
+  .highlight-card:hover { transform: translateY(-4px); }
+  .highlight-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; width: 60px; height: 2px;
+    background: var(--gold);
+  }
+  .highlight-icon { font-size: 2rem; margin-bottom: 16px; }
+  .highlight-card h3 { font-family: var(--serif); font-size: 1.2rem; margin-bottom: 12px; }
+  .highlight-card p { font-size: .8rem; color: var(--muted); line-height: 1.7; }
+  .highlight-stat {
+    font-family: var(--mono); font-size: 2rem; color: var(--gold);
+    margin-bottom: 4px; display: block;
+  }
+
+  /* ── QUOTES ── */
+  #quotes { padding: 120px 0; background: var(--near-black); }
+  .quotes-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 60px; }
+  .quote-card {
+    border: 1px solid var(--glass-border); border-radius: 16px;
+    padding: 40px 36px; background: var(--glass);
+    position: relative; overflow: hidden;
+  }
+  .quote-card::before {
+    content: '\201C';
+    position: absolute; top: -10px; left: 20px;
+    font-family: var(--serif); font-size: 8rem; color: rgba(201,168,76,.08);
+    line-height: 1; pointer-events: none;
+  }
+  .quote-text {
+    font-family: var(--serif); font-style: italic;
+    font-size: 1.15rem; line-height: 1.7; color: rgba(250,250,250,.85);
+    margin-bottom: 20px; position: relative; z-index: 1;
+  }
+  .quote-attr { font-family: var(--mono); font-size: .62rem; color: var(--gold); letter-spacing: .1em; }
+  .quote-featured {
+    grid-column: span 2;
+    background: linear-gradient(135deg, rgba(26,58,107,.3), rgba(201,168,76,.08));
+    border-color: rgba(201,168,76,.3);
+    text-align: center;
+  }
+  .quote-featured .quote-text { font-size: 1.45rem; }
+  .quote-featured::before { left: 50%; transform: translateX(-50%); top: -20px; font-size: 10rem; }
+
+  /* ── FUTURE DREAMS ── */
+  #future { padding: 120px 0; background: var(--black); }
+  .future-intro {
+    font-family: var(--serif); font-size: 1.3rem; font-style: italic;
+    color: rgba(250,250,250,.6); max-width: 600px; margin-top: 16px;
+  }
+  .future-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 60px; }
+  .future-card {
+    border: 1px solid var(--glass-border); border-radius: 16px;
+    padding: 28px 22px; background: var(--glass); text-align: center;
+    transition: transform .3s;
+  }
+  .future-card:hover { transform: translateY(-4px); }
+  .future-icon { font-size: 2.2rem; margin-bottom: 14px; }
+  .future-card h4 { font-family: var(--serif); font-size: 1rem; margin-bottom: 8px; }
+  .future-card p { font-size: .75rem; color: var(--muted); line-height: 1.6; }
+  .future-year { font-family: var(--mono); font-size: .6rem; color: var(--gold); margin-top: 12px; }
+
+  /* ── STATS ── */
+  #stats { padding: 120px 0; background: var(--near-black); }
+  .stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 60px; }
+  .stat-card {
+    border: 1px solid var(--glass-border); border-radius: 20px;
+    padding: 40px 36px; background: var(--glass);
+  }
+  .stat-card h3 { font-family: var(--serif); font-size: 1.2rem; margin-bottom: 24px; }
+  .bar-row { display: flex; flex-direction: column; gap: 14px; }
+  .bar-item { display: flex; flex-direction: column; gap: 6px; }
+  .bar-meta { display: flex; justify-content: space-between; font-size: .75rem; }
+  .bar-label { color: rgba(250,250,250,.75); }
+  .bar-pct { font-family: var(--mono); color: var(--gold); }
+  .bar-track { height: 4px; background: rgba(255,255,255,.06); border-radius: 2px; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 2px; background: linear-gradient(90deg, var(--blue-mid), var(--gold)); }
+  .fun-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .fun-fact {
+    background: rgba(255,255,255,.03); border-radius: 12px;
+    padding: 20px; text-align: center;
+  }
+  .fun-fact .num { font-family: var(--mono); font-size: 2rem; color: var(--gold); display: block; }
+  .fun-fact .label { font-size: .72rem; color: var(--muted); line-height: 1.5; }
+  .lang-dots { display: flex; flex-direction: column; gap: 10px; }
+  .lang-item { display: flex; align-items: center; gap: 12px; }
+  .lang-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  .lang-name { font-size: .8rem; flex: 1; }
+  .lang-votes { font-family: var(--mono); font-size: .7rem; color: var(--gold-dim); }
+
+  /* ── GOODBYE ── */
+  #goodbye {
+    padding: 140px 0; text-align: center;
+    background: radial-gradient(ellipse 80% 60% at 50% 100%, #0D1F44 0%, var(--black) 70%);
+    border-top: 1px solid var(--glass-border);
+  }
+  .goodbye-quote {
+    font-family: var(--serif); font-size: clamp(1.6rem, 4vw, 2.8rem);
+    font-style: italic; font-weight: 300; line-height: 1.3;
+    max-width: 700px; margin: 0 auto 16px; color: rgba(250,250,250,.9);
+  }
+  .goodbye-sub { font-size: .85rem; color: var(--muted); margin-bottom: 80px; }
+  .sig-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 900px; margin: 0 auto 60px; }
+  .sig-box {
+    border-bottom: 1px solid var(--gold-dim); padding-bottom: 40px;
+    text-align: center;
+  }
+  .sig-name { font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-top: 8px; }
+  .farewell-note {
+    max-width: 600px; margin: 0 auto;
+    border: 1px solid var(--glass-border); border-radius: 16px;
+    padding: 40px; background: var(--glass);
+    font-family: var(--serif); font-style: italic;
+    font-size: 1.05rem; color: rgba(250,250,250,.65); line-height: 1.8;
+  }
+  .class-badge {
+    display: inline-block; margin-top: 60px;
+    font-family: var(--mono); font-size: .65rem; letter-spacing: .3em;
+    text-transform: uppercase; color: var(--gold-dim);
+    border: 1px solid var(--gold-dim); padding: 8px 24px; border-radius: 100px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 32px 40px; border-top: 1px solid var(--glass-border);
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: .72rem; color: var(--muted);
+  }
+  footer span { font-family: var(--mono); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .container { padding: 0 24px; }
+    .welcome-grid, .students-grid, .highlights-grid, .quotes-grid, .future-grid, .stats-grid { grid-template-columns: 1fr; }
+    .quotes-grid .quote-featured { grid-column: span 1; }
+    .memory-grid { grid-template-columns: repeat(2, 1fr); }
+    .memory-cell.wide { grid-column: span 1; }
+    .sig-grid { grid-template-columns: repeat(2, 1fr); }
+    .tl-item { grid-template-columns: 1fr; }
+    .timeline-line { display: none; }
+    .tl-left, .tl-right { text-align: left; padding: 0; }
+    .tl-dot { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">ECE · 2026</div>
+  <ul class="nav-links">
+    <li><a href="#cover">Cover</a></li>
+    <li><a href="#welcome">Welcome</a></li>
+    <li><a href="#students">Profiles</a></li>
+    <li><a href="#memories">Memories</a></li>
+    <li><a href="#timeline">Journey</a></li>
+    <li><a href="#quotes">Quotes</a></li>
+    <li><a href="#stats">Stats</a></li>
+    <li><a href="#goodbye">Goodbye</a></li>
+  </ul>
+</nav>
+
+<!-- ══ COVER ══ -->
+<section id="cover">
+  <div class="stars"></div>
+  <div class="cover-glow"></div>
+  <div class="cover-glow-gold"></div>
+
+  <div class="univ-logo-placeholder">U</div>
+
+  <div class="cap-row">
+    <span class="cap-sm">🎓</span>
+    <span class="cap">🎓</span>
+    <span class="cap-sm">🎓</span>
+  </div>
+
+  <div class="cover-year">Class of 2026</div>
+
+  <h1 class="cover-title">
+    Memories<br><span>That Never Fade</span>
+  </h1>
+
+  <p class="cover-dept">SCHOOL  of ELECTRICAL &amp;COMPUTER Engineering</p>
+
+  <blockquote class="cover-quote">
+    "The friendships we forged in late-night study halls, the triumphs we shared at 2 a.m. after a bug finally broke — these are the chapters that define us forever."
+  </blockquote>
+
+ <img 
+      src="GC_2026/classphoto.jpg" 
+      alt="Student Name"
+      style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+    />
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ══ WELCOME ══ -->
+<section id="welcome">
+  <div class="container">
+    <div class="section-label">01 — Welcome</div>
+    <h2 class="section-title">A Word From <em>Those Who</em><br>Walked With You</h2>
+    <div class="gold-line"></div>
+
+    <div class="welcome-grid">
+      <div class="welcome-card">
+        <div class="welcome-card-tag"> GC 2026 FAREWELL ORGANIZERS</div>
+        <h3>RUTH,BALI,NAHOM,BINIYAM<br>GC farewell organizers</h3>
+        <p>
+           Years ago, we walked into these halls as students with dreams, curiosity, and determination. Today, we stand on the edge of graduation, carrying memories, knowledge, and friendships that shaped our journey. As the GC Committee, we are honored to celebrate this milestone with all of you. The challenges, sleepless nights, projects, and unforgettable moments have brought us here. May this graduation not be the end, but the beginning of greater achievements. Wherever life takes us, let us always remember the journey we shared. Congratulations to the graduating class — the future is yours to build. 🎓✨
+        </p>
+        <div class="avatar-row">
+          <div class="avatar">🎓</div>
+          <div class="avatar-info">
+            <span class="avatar-name">RUTH,BALI,NAHOM,BINIYAM</span>
+            <span class="avatar-role">STUDENTS OF ELECTRICAL AND COMPUTER ENGINEERINGA</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="welcome-card">
+        <div class="welcome-card-tag">Class Representatives</div>
+        <h3>[BALI ADOLA] &amp;<br>[KALKIDAN TEKEBA]</h3>
+        <p>
+          To our classmates representatives thank you. Thank you for the group chats 
+          that never slept, the shared deadlines, the shared victories. We laughed together in lectures 
+          and cried together over algorithms,electronics,fundamentals. Whatever comes next, know that this class built something 
+          rare: a family from strangers, and genius from grit.
+        </p>
+        <div class="avatar-row">
+          <div class="avatar" style="font-size:1rem;">🎓</div>
+          <div class="avatar-info">
+            <span class="avatar-name">BALI ADOLA</span>
+            <span class="avatar-name">KALKIDAN TEKEBA</span>
+            <span class="avatar-role">Class REPRESENTATTIVES</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lecturer appreciation -->
+    <div style="margin-top: 60px;">
+      <div class="section-label" style="margin-bottom:20px;">With deepest gratitude to our lecturers</div>
+      <div class="lecturer-row">
+        <div class="lecturer-chip"><span class="dot"></span>  mr. Wehib abubaker Data Structure and Algorithms</div>
+        <div class="lecturer-chip"><span class="dot"></span> Mr. Nanecha kebede fundamental of electrical engineering</div>
+
+    <div class="lecturer-chip"><span class="dot"></span> Mr. Lidet abe dean of SECBE</div>
+
+        <div class="lecturer-chip"><span class="dot"></span> + All Supporting Staff</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ STUDENT PROFILES ══ -->
+<section id="students">
+  <div class="container">
+    <div class="section-label"> Student Profiles</div>
+    <h2 class="section-title">The <em>Faces</em><br>Behind The  Graduating Class</h2>
+    <div class="gold-line"></div>
+
+    <div class="students-grid">
+
+      <!-- STUDENT CARD TEMPLATE — repeat for each student -->
+     <div class="student-card">
+  <div class="student-photo">
+    <span class="student-number"></span>
+
+    <img 
+      src="GC_2026/mulatalamirew.jpg" 
+      alt="Student Name"
+      style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+    />
+
+    <!-- Shows only if image file is missing -->
+    <div style="display:none;position:absolute;inset:0;flex-direction:column;
+                align-items:center;justify-content:center;gap:8px;color:#8B96A8;">
+      <span style="font-size:3rem;opacity:.25;">👤</span>
+      <span style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;
+                   opacity:.5;font-family:monospace;">Photo Not Found</span>
+    </div>
+
+  </div>
+  <div class="student-body">
+    <div class="student-name">mullat alamirew</div>
+    <div class="student-id">: ECE· Computer engineer</div>
+    <div class="student-quote">"The best error message is the one that never appears."</div>
+    <div class="student-meta">
+      <div class="meta-row"><span class="meta-label">💬 Last Words</span><span class="meta-val">"From ‘First Semester Hopeful’ to ‘Final Semester Hopeless’"</span></div>
+      <div class="meta-row"><span class="meta-label">🌟 Memory</span><span class="meta-val">the moment  i shared with class mates</span></div>
+      <div class="meta-row"><span class="meta-label">🚀 Dream</span><span class="meta-val">[Future career goal]</span></div>
+    </div>
+    <div class="skills-row">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">ML</span>
+      <span class="skill-tag">React</span>
+      <span class="skill-tag">Cloud</span>
+    </div>
+  </div>
+  <div class="student-footer">
+    <span class="connect-label">Connect</span>
+    <div class="connect-icons">
+      <span title="LinkedIn">💼</span>
+      <span title="GitHub">💻</span>
+      <span title="Twitter">🐦</span>
+      <span title="Email">✉️</span>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<div class="student-card">
+  <div class="student-photo">
+    <span class="student-number">#CS-2026-001</span>
+
+    <img 
+      src="GC_2026/biniyamsolomon1.jpg" 
+      alt="Student Name"
+      style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+    />
+
+    <!-- Shows only if image file is missing -->
+    <div style="display:none;position:absolute;inset:0;flex-direction:column;
+                align-items:center;justify-content:center;gap:8px;color:#8B96A8;">
+      <span style="font-size:3rem;opacity:.25;">👤</span>
+      <span style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;
+                   opacity:.5;font-family:monospace;">Photo Not Found</span>
+    </div>
+
+  </div>
+  <div class="student-body">
+    <div class="student-name">BINIYAM SOLOMON</div>
+    <div class="student-id">ID: CS/2022/001 · Computer engineer</div>
+    <div class="student-quote">"The best error message is the one that never appears."</div>
+    <div class="student-meta">
+      <div class="meta-row"><span class="meta-label">💬 Last Words</span><span class="meta-val">Degree loaded, life loading,congrats my class mates</span></div>
+      <div class="meta-row"><span class="meta-label">🌟 Memory</span><span class="meta-val">The moments I shared with my classmates</span></div>
+      <div class="meta-row"><span class="meta-label">🚀 Dream</span><span class="meta-val">[Future career goal]</span></div>
+    </div>
+    <div class="skills-row">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">ML</span>
+      <span class="skill-tag">React</span>
+      <span class="skill-tag">Cloud</span>
+    </div>
+  </div>
+  <div class="student-footer">
+    <span class="connect-label">Connect</span>
+    <div class="connect-icons">
+      <span title="LinkedIn">💼</span>
+      <span title="GitHub">💻</span>
+      <span title="Twitter">🐦</span>
+      <span title="Email">✉️</span>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="student-card">
+  <div class="student-photo">
+    <span class="student-number">#ECE-2026-001</span>
+
+    <img 
+      src="GC_2026/nahomtewodros.jpg" 
+      alt="Student Name"
+      style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+    />
+
+    <!-- Shows only if image file is missing -->
+    <div style="display:none;position:absolute;inset:0;flex-direction:column;
+                align-items:center;justify-content:center;gap:8px;color:#8B96A8;">
+      <span style="font-size:3rem;opacity:.25;">👤</span>
+      <span style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;
+                   opacity:.5;font-family:monospace;">Photo Not Found</span>
+    </div>
+
+  </div>
+  <div class="student-body">
+    <div class="student-name">nahom tewodros </div>
+    <div class="student-id">ID: CS/2022/001 · Computer engineer</div>
+    <div class="student-quote">"The best error message is the one that never appears."</div>
+    <div class="student-meta">
+      <div class="meta-row"><span class="meta-label">💬 Last Words</span><span class="meta-val">Degree loaded, life loading.</span></div>
+      <div class="meta-row"><span class="meta-label">🌟 Memory</span><span class="meta-val">moments with</span></div>
+      <div class="meta-row"><span class="meta-label">🚀 Dream</span><span class="meta-val">researcher</span></div>
+    </div>
+    <div class="skills-row">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">ML</span>
+      <span class="skill-tag">React</span>
+      <span class="skill-tag">Cloud</span>
+    </div>
+  </div>
+  <div class="student-footer">
+    <span class="connect-label">Connect</span>
+    <div class="connect-icons">
+      <span title="LinkedIn">💼</span>
+      <span title="GitHub">💻</span>
+      <span title="Twitter">🐦</span>
+      <span title="Email">✉️</span>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="student-card">
+  <div class="student-photo">
+    <span class="student-number">#CS-2026-001</span>
+
+    <img 
+      src="GC_2026/ephremalemayehu.jpg" 
+      alt="Student Name"
+      style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+    />
+
+    <!-- Shows only if image file is missing -->
+    <div style="display:none;position:absolute;inset:0;flex-direction:column;
+                align-items:center;justify-content:center;gap:8px;color:#8B96A8;">
+      <span style="font-size:3rem;opacity:.25;">👤</span>
+      <span style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;
+                   opacity:.5;font-family:monospace;">Photo Not Found</span>
+    </div>
+
+  </div>
+  <div class="student-body">
+    <div class="student-name">ephrem Alemayehu </div>
+    <div class="student-id">ECE  Computer engineer</div>
+    <div class="student-quote">"The best error message is the one that never appears."</div>
+    <div class="student-meta">
+      <div class="meta-row"><span class="meta-label">💬 Last Words</span><span class="meta-val">Trust the journey, honor your growth, and let your light guide the way.</span></div>
+      <div class="meta-row"><span class="meta-label">🌟 Memory</span><span class="meta-val">[Favourite university moment]</span></div>
+      <div class="meta-row"><span class="meta-label">🚀 Dream</span><span class="meta-val">[Future career goal]</span></div>
+    </div>
+    <div class="skills-row">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">ML</span>
+      <span class="skill-tag">React</span>
+      <span class="skill-tag">Cloud</span>
+    </div>
+  </div>
+  <div class="student-footer">
+    <span class="connect-label">Connect</span>
+    <div class="connect-icons">
+      <span title="LinkedIn">💼</span>
+      <span title="GitHub">💻</span>
+      <span title="Twitter">🐦</span>
+      <span title="Email">✉️</span>
+    </div>
+  </div>
+</div>
+
+
+<div class="student-card">
+  <div class="student-photo">
+    <span class="student-number">#CS-2026-001</span>
+
+    <img 
+      src="GC_2026/baliadola.jpg" 
+      alt="Student Name"
+      style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+    />
+
+    <!-- Shows only if image file is missing -->
+    <div style="display:none;position:absolute;inset:0;flex-direction:column;
+                align-items:center;justify-content:center;gap:8px;color:#8B96A8;">
+      <span style="font-size:3rem;opacity:.25;">👤</span>
+      <span style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;
+                   opacity:.5;font-family:monospace;">Photo Not Found</span>
+    </div>
+
+  </div>
+  <div class="student-body">
+    <div class="student-name">[bali adola ]</div>
+    <div class="student-id"> · Computer engineer</div>
+    <div class="student-quote">"The best error message is the one that never appears."</div>
+    <div class="student-meta">
+      <div class="meta-row"><span class="meta-label">💬 Last Words</span><span class="meta-val">I might not see you again, but I will never forget you</span></div>
+      <div class="meta-row"><span class="meta-label">🌟 Memory</span><span class="meta-val">[Favourite university moment]</span></div>
+      <div class="meta-row"><span class="meta-label">🚀 Dream</span><span class="meta-val">[Future career goal]</span></div>
+    </div>
+    <div class="skills-row">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">ML</span>
+      <span class="skill-tag">React</span>
+      <span class="skill-tag">Cloud</span>
+    </div>
+  </div>
+  <div class="student-footer">
+    <span class="connect-label">Connect</span>
+    <div class="connect-icons">
+      <span title="LinkedIn">💼</span>
+      <span title="GitHub">💻</span>
+      <span title="Twitter">🐦</span>
+      <span title="Email">✉️</span>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="student-card">
+  <div class="student-photo">
+    <span class="student-number">#CS-2026-001</span>
+
+    <img 
+      src="GC_2026/minasemamecha.jpg" 
+      alt="Student Name"
+      style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+    />
+
+    <!-- Shows only if image file is missing -->
+    <div style="display:none;position:absolute;inset:0;flex-direction:column;
+                align-items:center;justify-content:center;gap:8px;color:#8B96A8;">
+      <span style="font-size:3rem;opacity:.25;">👤</span>
+      <span style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;
+                   opacity:.5;font-family:monospace;">Photo Not Found</span>
+    </div>
+
+  </div>
+  <div class="student-body">
+    <div class="student-name">MINASE MAMECHA </div>
+    <div class="student-id"> · Computer engineer</div>
+    <div class="student-quote">"The best error message is the one that never appears."</div>
+    <div class="student-meta">
+      <div class="meta-row"><span class="meta-label">💬 Last Words</span><span class="meta-val">Finally escaped the prison, secured the degree, and did it all without breaking a sweat. I did it BEZENEZENA since day one. 🎓🔥</span></div>
+      <div class="meta-row"><span class="meta-label">🌟 Memory</span><span class="meta-val">The moments I shared with my classmates</span></div>
+      <div class="meta-row"><span class="meta-label">🚀 Dream</span><span class="meta-val">[researcher]</span></div>
+    </div>
+    <div class="skills-row">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">ML</span>
+      <span class="skill-tag">React</span>
+      <span class="skill-tag">Cloud</span>
+    </div>
+  </div>
+  <div class="student-footer">
+    <span class="connect-label">Connect</span>
+    <div class="connect-icons">
+      <span title="LinkedIn">💼</span>
+      <span title="GitHub">💻</span>
+      <span title="Twitter">🐦</span>
+      <span title="Email">✉️</span>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<div class="student-card">
+  <div class="student-photo">
+    <span class="student-number">#CS-2026-001</span>
+
+    <img 
+      src="GC_2026/hundenegash.jpg" 
+      alt="Student Name"
+      style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+    />
+
+    <!-- Shows only if image file is missing -->
+    <div style="display:none;position:absolute;inset:0;flex-direction:column;
+                align-items:center;justify-content:center;gap:8px;color:#8B96A8;">
+      <span style="font-size:3rem;opacity:.25;">👤</span>
+      <span style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;
+                   opacity:.5;font-family:monospace;">Photo Not Found</span>
+    </div>
+
+  </div>
+  <div class="student-body">
+    <div class="student-name">HUNDE NEGASH</div>
+    <div class="student-id"> · Computer engineer</div>
+    <div class="student-quote">"The best error message is the one that never appears."</div>
+    <div class="student-meta">
+      <div class="meta-row"><span class="meta-label">💬 Last Words</span><span class="meta-val">I cooked  this LIFE  before it cooked ME ✌️</span></div>
+      <div class="meta-row"><span class="meta-label">🌟 Memory</span><span class="meta-val">[The moments I shared with my classmates.]</span></div>
+      <div class="meta-row"><span class="meta-label">🚀 Dream</span><span class="meta-val">[researcher]</span></div>
+    </div>
+    <div class="skills-row">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">ML</span>
+      <span class="skill-tag">React</span>
+      <span class="skill-tag">Cloud</span>
+    </div>
+  </div>
+  <div class="student-footer">
+    <span class="connect-label">Connect</span>
+    <div class="connect-icons">
+      <span title="LinkedIn">💼</span>
+      <span title="GitHub">💻</span>
+      <span title="Twitter">🐦</span>
+      <span title="Email">✉️</span>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="student-card">
+  <div class="student-photo">
+    <span class="student-number">#ECE-2026-001</span>
+
+    <img 
+      src="GC_2026/ruthteshome.JPG" 
+      alt="Student Name"
+      style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+    />
+
+    <!-- Shows only if image file is missing -->
+    <div style="display:none;position:absolute;inset:0;flex-direction:column;
+                align-items:center;justify-content:center;gap:8px;color:#8B96A8;">
+      <span style="font-size:3rem;opacity:.25;">👤</span>
+      <span style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;
+                   opacity:.5;font-family:monospace;">Photo Not Found</span>
+    </div>
+
+  </div>
+  <div class="student-body">
+    <div class="student-name">RUTH TESHOME</div>
+    <div class="student-id"> · Computer engineer</div>
+    <div class="student-quote">"The best error message is the one that never appears."</div>
+    <div class="student-meta">
+      <div class="meta-row"><span class="meta-label">💬 Last Words</span><span class="meta-val"></span> By God’s grace — survived and graduated.</div>
+      <div class="meta-row"><span class="meta-label">🌟 Memory</span><span class="meta-val">The moments I shared with my classmates.</span></div>
+      <div class="meta-row"><span class="meta-label">🚀 Dream</span><span class="meta-val">[researcher]</span></div>
+    </div>
+    <div class="skills-row">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">ML</span>
+      <span class="skill-tag">React</span>
+      <span class="skill-tag">Cloud</span>
+    </div>
+  </div>
+  <div class="student-footer">
+    <span class="connect-label">Connect</span>
+    <div class="connect-icons">
+      <span title="LinkedIn">💼</span>
+      <span title="GitHub">💻</span>
+      <span title="Twitter">🐦</span>
+      <span title="Email">✉️</span>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="student-card">
+  <div class="student-photo">
+    <span class="student-number">#ECE-2026-001</span>
+
+    <img 
+      src="GC_2026/" 
+      alt="Student Name"
+      style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+    />
+
+    <!-- Shows only if image file is missing -->
+    <div style="display:none;position:absolute;inset:0;flex-direction:column;
+                align-items:center;justify-content:center;gap:8px;color:#8B96A8;">
+      <span style="font-size:3rem;opacity:.25;">👤</span>
+      <span style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;
+                   opacity:.5;font-family:monospace;">Photo Not Found</span>
+    </div>
+
+  </div>
+  <div class="student-body">
+    <div class="student-name">ALSAN LEGESSE</div>
+    <div class="student-id"> · Computer engineer</div>
+    <div class="student-quote">"The best error message is the one that never appears."</div>
+    <div class="student-meta">
+      <div class="meta-row"><span class="meta-label">💬 Last Words</span><span class="meta-val"></span> Finally I'm free.</div>
+      <div class="meta-row"><span class="meta-label">🌟 Memory</span><span class="meta-val">The moments I shared with my classmates.</span></div>
+      <div class="meta-row"><span class="meta-label">🚀 Dream</span><span class="meta-val">[researcher]</span></div>
+    </div>
+    <div class="skills-row">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">ML</span>
+      <span class="skill-tag">React</span>
+      <span class="skill-tag">Cloud</span>
+    </div>
+  </div>
+  <div class="student-footer">
+    <span class="connect-label">Connect</span>
+    <div class="connect-icons">
+      <span title="LinkedIn">💼</span>
+      <span title="GitHub">💻</span>
+      <span title="Twitter">🐦</span>
+      <span title="Email">✉️</span>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="student-card">
+  <div class="student-photo">
+    <span class="student-number">#ECE-2026-001</span>
+
+    <img 
+      src="GC_2026/" 
+      alt="Student Name"
+      style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+    />
+
+    <!-- Shows only if image file is missing -->
+    <div style="display:none;position:absolute;inset:0;flex-direction:column;
+                align-items:center;justify-content:center;gap:8px;color:#8B96A8;">
+      <span style="font-size:3rem;opacity:.25;">👤</span>
+      <span style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;
+                   opacity:.5;font-family:monospace;">Photo Not Found</span>
+    </div>
+
+  </div>
+  <div class="student-body">
+    <div class="student-name">Kawther Berouk</div>
+    <div class="student-id"> · electrical engineer</div>
+    <div class="student-quote">"The best error message is the one that never appears."</div>
+    <div class="student-meta">
+      <div class="meta-row"><span class="meta-label">💬 Last Words</span><span class="meta-val"></span> & I'm out ✌️.</div>
+      <div class="meta-row"><span class="meta-label">🌟 Memory</span><span class="meta-val">The moments I shared with my classmates.</span></div>
+      <div class="meta-row"><span class="meta-label">🚀 Dream</span><span class="meta-val">[researcher]</span></div>
+    </div>
+    <div class="skills-row">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">ML</span>
+      <span class="skill-tag">React</span>
+      <span class="skill-tag">Cloud</span>
+    </div>
+  </div>
+  <div class="student-footer">
+    <span class="connect-label">Connect</span>
+    <div class="connect-icons">
+      <span title="LinkedIn">💼</span>
+      <span title="GitHub">💻</span>
+      <span title="Twitter">🐦</span>
+      <span title="Email">✉️</span>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="student-card">
+  <div class="student-photo">
+    <span class="student-number">#ECE-2026-001</span>
+
+    <img 
+      src="GC_2026/" 
+      alt="Student Name"
+      style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+    />
+
+    <!-- Shows only if image file is missing -->
+    <div style="display:none;position:absolute;inset:0;flex-direction:column;
+                align-items:center;justify-content:center;gap:8px;color:#8B96A8;">
+      <span style="font-size:3rem;opacity:.25;">👤</span>
+      <span style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;
+                   opacity:.5;font-family:monospace;">Photo Not Found</span>
+    </div>
+
+  </div>
+  <div class="student-body">
+    <div class="student-name">Rahel Anmut</div>
+    <div class="student-id"> · power engineer</div>
+    <div class="student-quote">"The best error message is the one that never appears."</div>
+    <div class="student-meta">
+      <div class="meta-row"><span class="meta-label">💬 Last Words</span><span class="meta-val"></span> Hold on let me ask chat gpt.</div>
+      <div class="meta-row"><span class="meta-label">🌟 Memory</span><span class="meta-val">The moments I shared with my classmates.</span></div>
+      <div class="meta-row"><span class="meta-label">🚀 Dream</span><span class="meta-val">[researcher]</span></div>
+    </div>
+    <div class="skills-row">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">ML</span>
+      <span class="skill-tag">React</span>
+      <span class="skill-tag">Cloud</span>
+    </div>
+  </div>
+  <div class="student-footer">
+    <span class="connect-label">Connect</span>
+    <div class="connect-icons">
+      <span title="LinkedIn">💼</span>
+      <span title="GitHub">💻</span>
+      <span title="Twitter">🐦</span>
+      <span title="Email">✉️</span>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="student-card">
+  <div class="student-photo">
+    <span class="student-number">#ECE-2026-001</span>
+
+    <img 
+      src="GC_2026/kalkidantekeba.jpg" 
+      alt="Student Name"
+      style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+    />
+
+    <!-- Shows only if image file is missing -->
+    <div style="display:none;position:absolute;inset:0;flex-direction:column;
+                align-items:center;justify-content:center;gap:8px;color:#8B96A8;">
+      <span style="font-size:3rem;opacity:.25;">👤</span>
+      <span style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;
+                   opacity:.5;font-family:monospace;">Photo Not Found</span>
+    </div>
+
+  </div>
+  <div class="student-body">
+    <div class="student-name">Kalkidan Tekeba</div>
+    <div class="student-id"> · Power engineer</div>
+    <div class="student-quote">"The best error message is the one that never appears."</div>
+    <div class="student-meta">
+      <div class="meta-row"><span class="meta-label">💬 Last Words</span><span class="meta-val"></span> Dream big and dare to fail.</div>
+      <div class="meta-row"><span class="meta-label">🌟 Memory</span><span class="meta-val">The moments I shared with my classmates.</span></div>
+      <div class="meta-row"><span class="meta-label">🚀 Dream</span><span class="meta-val">[researcher]</span></div>
+    </div>
+    <div class="skills-row">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">ML</span>
+      <span class="skill-tag">React</span>
+      <span class="skill-tag">Cloud</span>
+    </div>
+  </div>
+  <div class="student-footer">
+    <span class="connect-label">Connect</span>
+    <div class="connect-icons">
+      <span title="LinkedIn">💼</span>
+      <span title="GitHub">💻</span>
+      <span title="Twitter">🐦</span>
+      <span title="Email">✉️</span>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="student-card">
+  <div class="student-photo">
+    <span class="student-number">#ECE-2026-001</span>
+
+    <img 
+      src="GC_2026/" 
+      alt="Student Name"
+      style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+    />
+
+    <!-- Shows only if image file is missing -->
+    <div style="display:none;position:absolute;inset:0;flex-direction:column;
+                align-items:center;justify-content:center;gap:8px;color:#8B96A8;">
+      <span style="font-size:3rem;opacity:.25;">👤</span>
+      <span style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;
+                   opacity:.5;font-family:monospace;">Photo Not Found</span>
+    </div>
+
+  </div>
+  <div class="student-body">
+    <div class="student-name">Kedija Elias</div>
+    <div class="student-id"> · computer engineer</div>
+    <div class="student-quote">"The best error message is the one that never appears."</div>
+    <div class="student-meta">
+      <div class="meta-row"><span class="meta-label">💬 Last Words</span><span class="meta-val"></span> i did it.</div>
+      <div class="meta-row"><span class="meta-label">🌟 Memory</span><span class="meta-val">The moments I shared with my classmates.</span></div>
+      <div class="meta-row"><span class="meta-label">🚀 Dream</span><span class="meta-val">[researcher]</span></div>
+    </div>
+    <div class="skills-row">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">ML</span>
+      <span class="skill-tag">React</span>
+      <span class="skill-tag">Cloud</span>
+    </div>
+  </div>
+  <div class="student-footer">
+    <span class="connect-label">Connect</span>
+    <div class="connect-icons">
+      <span title="LinkedIn">💼</span>
+      <span title="GitHub">💻</span>
+      <span title="Twitter">🐦</span>
+      <span title="Email">✉️</span>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="student-card">
+  <div class="student-photo">
+    <span class="student-number">#ECE-2026-001</span>
+
+    <img 
+      src="GC_2026/" 
+      alt="Student Name"
+      style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+    />
+
+    <!-- Shows only if image file is missing -->
+    <div style="display:none;position:absolute;inset:0;flex-direction:column;
+                align-items:center;justify-content:center;gap:8px;color:#8B96A8;">
+      <span style="font-size:3rem;opacity:.25;">👤</span>
+      <span style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;
+                   opacity:.5;font-family:monospace;">Photo Not Found</span>
+    </div>
+
+  </div>
+  <div class="student-body">
+    <div class="student-name">Molla mihret</div>
+    <div class="student-id"> · computer engineer</div>
+    <div class="student-quote">"The best error message is the one that never appears."</div>
+    <div class="student-meta">
+      <div class="meta-row"><span class="meta-label">💬 Last Words</span><span class="meta-val"></span> i did it bezenezena.</div>
+      <div class="meta-row"><span class="meta-label">🌟 Memory</span><span class="meta-val">The moments I shared with my classmates.</span></div>
+      <div class="meta-row"><span class="meta-label">🚀 Dream</span><span class="meta-val">[researcher]</span></div>
+    </div>
+    <div class="skills-row">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">ML</span>
+      <span class="skill-tag">React</span>
+      <span class="skill-tag">Cloud</span>
+    </div>
+  </div>
+  <div class="student-footer">
+    <span class="connect-label">Connect</span>
+    <div class="connect-icons">
+      <span title="LinkedIn">💼</span>
+      <span title="GitHub">💻</span>
+      <span title="Twitter">🐦</span>
+      <span title="Email">✉️</span>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="student-card">
+  <div class="student-photo">
+    <span class="student-number">#ECE-2026-001</span>
+
+    <img 
+      src="GC_2026/" 
+      alt="Student Name"
+      style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+    />
+
+    <!-- Shows only if image file is missing -->
+    <div style="display:none;position:absolute;inset:0;flex-direction:column;
+                align-items:center;justify-content:center;gap:8px;color:#8B96A8;">
+      <span style="font-size:3rem;opacity:.25;">👤</span>
+      <span style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;
+                   opacity:.5;font-family:monospace;">Photo Not Found</span>
+    </div>
+
+  </div>
+  <div class="student-body">
+    <div class="student-name">Ferhan Harun</div>
+    <div class="student-id"> · computer engineer</div>
+    <div class="student-quote">"The best error message is the one that never appears."</div>
+    <div class="student-meta">
+      <div class="meta-row"><span class="meta-label">💬 Last Words</span><span class="meta-val"></span>DONE.</div>
+      <div class="meta-row"><span class="meta-label">🌟 Memory</span><span class="meta-val">The moments I shared with my classmates.</span></div>
+      <div class="meta-row"><span class="meta-label">🚀 Dream</span><span class="meta-val">[researcher]</span></div>
+    </div>
+    <div class="skills-row">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">ML</span>
+      <span class="skill-tag">React</span>
+      <span class="skill-tag">Cloud</span>
+    </div>
+  </div>
+  <div class="student-footer">
+    <span class="connect-label">Connect</span>
+    <div class="connect-icons">
+      <span title="LinkedIn">💼</span>
+      <span title="GitHub">💻</span>
+      <span title="Twitter">🐦</span>
+      <span title="Email">✉️</span>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="student-card">
+  <div class="student-photo">
+    <span class="student-number">#ECE-2026-001</span>
+
+    <img 
+      src="GC_2026/AwelAdem.jpg" 
+      alt="Student Name"
+      style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+    />
+
+    <!-- Shows only if image file is missing -->
+    <div style="display:none;position:absolute;inset:0;flex-direction:column;
+                align-items:center;justify-content:center;gap:8px;color:#8B96A8;">
+      <span style="font-size:3rem;opacity:.25;">👤</span>
+      <span style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;
+                   opacity:.5;font-family:monospace;">Photo Not Found</span>
+    </div>
+
+  </div>
+  <div class="student-body">
+    <div class="student-name">Awel Adem</div>
+    <div class="student-id"> · computer engineer</div>
+    <div class="student-quote">"The best error message is the one that never appears."</div>
+    <div class="student-meta">
+      <div class="meta-row"><span class="meta-label">💬 Last Words</span><span class="meta-val"></span> Alhamdulilah.</div>
+      <div class="meta-row"><span class="meta-label">🌟 Memory</span><span class="meta-val">The moments I shared with my classmates.</span></div>
+      <div class="meta-row"><span class="meta-label">🚀 Dream</span><span class="meta-val">[researcher]</span></div>
+    </div>
+    <div class="skills-row">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">ML</span>
+      <span class="skill-tag">React</span>
+      <span class="skill-tag">Cloud</span>
+    </div>
+  </div>
+  <div class="student-footer">
+    <span class="connect-label">Connect</span>
+    <div class="connect-icons">
+      <span title="LinkedIn">💼</span>
+      <span title="GitHub">💻</span>
+      <span title="Twitter">🐦</span>
+      <span title="Email">✉️</span>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<div class="student-card">
+  <div class="student-photo">
+    <span class="student-number">#ECE-2026-001</span>
+
+    <img 
+      src="GC_2026/khadirhasen.jpg" 
+      alt="Student Name"
+      style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+    />
+
+    <!-- Shows only if image file is missing -->
+    <div style="display:none;position:absolute;inset:0;flex-direction:column;
+                align-items:center;justify-content:center;gap:8px;color:#8B96A8;">
+      <span style="font-size:3rem;opacity:.25;">👤</span>
+      <span style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;
+                   opacity:.5;font-family:monospace;">Photo Not Found</span>
+    </div>
+
+  </div>
+  <div class="student-body">
+    <div class="student-name">khadir Hassan</div>
+    <div class="student-id"> · Power engineer</div>
+    <div class="student-quote">"The best error message is the one that never appears."</div>
+    <div class="student-meta">
+      <div class="meta-row"><span class="meta-label">💬 Last Words</span><span class="meta-val"></span> Afternoon long struggle,hard challenge,night sleepless, today we are Reach final</div>
+      <div class="meta-row"><span class="meta-label">🌟 Memory</span><span class="meta-val">The moments I shared with my classmates.</span></div>
+      <div class="meta-row"><span class="meta-label">🚀 Dream</span><span class="meta-val">[researcher]</span></div>
+    </div>
+    <div class="skills-row">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">ML</span>
+      <span class="skill-tag">React</span>
+      <span class="skill-tag">Cloud</span>
+    </div>
+  </div>
+  <div class="student-footer">
+    <span class="connect-label">Connect</span>
+    <div class="connect-icons">
+      <span title="LinkedIn">💼</span>
+      <span title="GitHub">💻</span>
+      <span title="Twitter">🐦</span>
+      <span title="Email">✉️</span>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="student-card">
+  <div class="student-photo">
+    <span class="student-number">#CS-2026-001</span>
+
+    <img 
+      src="GC_2026/bayisahailu.jpg" 
+      alt="Student Name"
+      style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+    />
+
+    <!-- Shows only if image file is missing -->
+    <div style="display:none;position:absolute;inset:0;flex-direction:column;
+                align-items:center;justify-content:center;gap:8px;color:#8B96A8;">
+      <span style="font-size:3rem;opacity:.25;">👤</span>
+      <span style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;
+                   opacity:.5;font-family:monospace;">Photo Not Found</span>
+    </div>
+
+  </div>
+  <div class="student-body">
+    <div class="student-name">BAYISA HAILU</div>
+    <div class="student-id"> · Computer engineer</div>
+    <div class="student-quote">"The best error message is the one that never appears."</div>
+    <div class="student-meta">
+      <div class="meta-row"><span class="meta-label">💬 Last Words</span><span class="meta-val">Glory to God who has enabled me to reach this milestone!</span></div>
+      <div class="meta-row"><span class="meta-label">🌟 Memory</span><span class="meta-val">[The moments I shared with my classmates.]</span></div>
+      <div class="meta-row"><span class="meta-label">🚀 Dream</span><span class="meta-val">[researcher]</span></div>
+    </div>
+    <div class="skills-row">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">ML</span>
+      <span class="skill-tag">React</span>
+      <span class="skill-tag">Cloud</span>
+    </div>
+  </div>
+  <div class="student-footer">
+    <span class="connect-label">Connect</span>
+    <div class="connect-icons">
+      <span title="LinkedIn">💼</span>
+      <span title="GitHub">💻</span>
+      <span title="Twitter">🐦</span>
+      <span title="Email">✉️</span>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="student-card">
+  <div class="student-photo">
+    <span class="student-number">#ECE-2026-001</span>
+
+    <img 
+      src="GC_2026/huzeyfaahmed.jpg" 
+      alt="Student Name"
+      style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+    />
+
+    <!-- Shows only if image file is missing -->
+    <div style="display:none;position:absolute;inset:0;flex-direction:column;
+                align-items:center;justify-content:center;gap:8px;color:#8B96A8;">
+      <span style="font-size:3rem;opacity:.25;">👤</span>
+      <span style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;
+                   opacity:.5;font-family:monospace;">Photo Not Found</span>
+    </div>
+
+  </div>
+  <div class="student-body">
+    <div class="student-name">HUZEYFA  AHMED</div>
+    <div class="student-id"> · Computer engineer</div>
+    <div class="student-quote">"The best error message is the one that never appears."</div>
+    <div class="student-meta">
+      <div class="meta-row"><span class="meta-label">💬 Last Words</span><span class="meta-val">Alhamdulilah</span></div>
+      <div class="meta-row"><span class="meta-label">🌟 Memory</span><span class="meta-val">[The moments I shared with my classmates.]</span></div>
+      <div class="meta-row"><span class="meta-label">🚀 Dream</span><span class="meta-val">[researcher]</span></div>
+    </div>
+    <div class="skills-row">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">ML</span>
+      <span class="skill-tag">React</span>
+      <span class="skill-tag">Cloud</span>
+    </div>
+  </div>
+  <div class="student-footer">
+    <span class="connect-label">Connect</span>
+    <div class="connect-icons">
+      <span title="LinkedIn">💼</span>
+      <span title="GitHub">💻</span>
+      <span title="Twitter">🐦</span>
+      <span title="Email">✉️</span>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="student-card">
+  <div class="student-photo">
+    <span class="student-number">#ECE-2026-001</span>
+
+    <img 
+      src="GC_2026/sherifamin.jpg" 
+      alt="Student Name"
+      style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+    />
+
+    <!-- Shows only if image file is missing -->
+    <div style="display:none;position:absolute;inset:0;flex-direction:column;
+                align-items:center;justify-content:center;gap:8px;color:#8B96A8;">
+      <span style="font-size:3rem;opacity:.25;">👤</span>
+      <span style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;
+                   opacity:.5;font-family:monospace;">Photo Not Found</span>
+    </div>
+
+  </div>
+  <div class="student-body">
+    <div class="student-name">SHERIF AMIN</div>
+    <div class="student-id"> · Computer engineer</div>
+    <div class="student-quote">"The best error message is the one that never appears."</div>
+    <div class="student-meta">
+      <div class="meta-row"><span class="meta-label">💬 Last Words</span><span class="meta-val">Glory to God who has enabled me to reach this milestone!</span></div>
+      <div class="meta-row"><span class="meta-label">🌟 Memory</span><span class="meta-val">[The moments I shared with my classmates.]</span></div>
+      <div class="meta-row"><span class="meta-label">🚀 Dream</span><span class="meta-val">[researcher]</span></div>
+    </div>
+    <div class="skills-row">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">ML</span>
+      <span class="skill-tag">React</span>
+      <span class="skill-tag">Cloud</span>
+    </div>
+  </div>
+  <div class="student-footer">
+    <span class="connect-label">Connect</span>
+    <div class="connect-icons">
+      <span title="LinkedIn">💼</span>
+      <span title="GitHub">💻</span>
+      <span title="Twitter">🐦</span>
+      <span title="Email">✉️</span>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="student-card">
+  <div class="student-photo">
+    <span class="student-number">#ECE-2026-001</span>
+
+    <img 
+      src="GC_2026/ayenewtewodros.jpg" 
+      alt="Student Name"
+      style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+    />
+
+    <!-- Shows only if image file is missing -->
+    <div style="display:none;position:absolute;inset:0;flex-direction:column;
+                align-items:center;justify-content:center;gap:8px;color:#8B96A8;">
+      <span style="font-size:3rem;opacity:.25;">👤</span>
+      <span style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;
+                   opacity:.5;font-family:monospace;">Photo Not Found</span>
+    </div>
+
+  </div>
+  <div class="student-body">
+    <div class="student-name">AYENEW TEWODROS</div>
+    <div class="student-id"> · Computer engineer</div>
+    <div class="student-quote">"The best error message is the one that never appears."</div>
+    <div class="student-meta">
+      <div class="meta-row"><span class="meta-label">💬 Last Words</span><span class="meta-val">God gets the glory. My family gets the bill. I get the degree.</span></div>
+      <div class="meta-row"><span class="meta-label">🌟 Memory</span><span class="meta-val">[The moments I shared with my classmates.]</span></div>
+      <div class="meta-row"><span class="meta-label">🚀 Dream</span><span class="meta-val">[researcher]</span></div>
+    </div>
+    <div class="skills-row">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">ML</span>
+      <span class="skill-tag">React</span>
+      <span class="skill-tag">Cloud</span>
+    </div>
+  </div>
+  <div class="student-footer">
+    <span class="connect-label">Connect</span>
+    <div class="connect-icons">
+      <span title="LinkedIn">💼</span>
+      <span title="GitHub">💻</span>
+      <span title="Twitter">🐦</span>
+      <span title="Email">✉️</span>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="student-card">
+  <div class="student-photo">
+    <span class="student-number">#CS-2026-001</span>
+
+    <img 
+      src="GC_2026/ramato.jpg" 
+      alt="Student Name"
+      style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+    />
+
+    <!-- Shows only if image file is missing -->
+    <div style="display:none;position:absolute;inset:0;flex-direction:column;
+                align-items:center;justify-content:center;gap:8px;color:#8B96A8;">
+      <span style="font-size:3rem;opacity:.25;">👤</span>
+      <span style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;
+                   opacity:.5;font-family:monospace;">Photo Not Found</span>
+    </div>
+
+  </div>
+  <div class="student-body">
+    <div class="student-name">ramato zeyin</div>
+    <div class="student-id"> · Computer engineer</div>
+    <div class="student-quote">"The best error message is the one that never appears."</div>
+    <div class="student-meta">
+      <div class="meta-row"><span class="meta-label">💬 Last Words</span><span class="meta-val"></span></div>
+      <div class="meta-row"><span class="meta-label">🌟 Memory</span><span class="meta-val">[The moments I shared with my classmates.]</span></div>
+      <div class="meta-row"><span class="meta-label">🚀 Dream</span><span class="meta-val">[researcher]</span></div>
+    </div>
+    <div class="skills-row">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">ML</span>
+      <span class="skill-tag">React</span>
+      <span class="skill-tag">Cloud</span>
+    </div>
+  </div>
+  <div class="student-footer">
+    <span class="connect-label">Connect</span>
+    <div class="connect-icons">
+      <span title="LinkedIn">💼</span>
+      <span title="GitHub">💻</span>
+      <span title="Twitter">🐦</span>
+      <span title="Email">✉️</span>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="student-card">
+  <div class="student-photo">
+    <span class="student-number">#ECE-2026-001</span>
+
+    <img 
+      src="GC_2026/bikilagaramu.jpg" 
+      alt="Student Name"
+      style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+    />
+
+    <!-- Shows only if image file is missing -->
+    <div style="display:none;position:absolute;inset:0;flex-direction:column;
+                align-items:center;justify-content:center;gap:8px;color:#8B96A8;">
+      <span style="font-size:3rem;opacity:.25;">👤</span>
+      <span style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;
+                   opacity:.5;font-family:monospace;">Photo Not Found</span>
+    </div>
+
+  </div>
+  <div class="student-body">
+    <div class="student-name">BIKILA GARAMU</div>
+    <div class="student-id"> · Computer engineer</div>
+    <div class="student-quote">"The best error message is the one that never appears."</div>
+    <div class="student-meta">
+      <div class="meta-row"><span class="meta-label">💬 Last Words</span><span class="meta-val"></span>I love and respect you all  in christ. to God alone be the glory for all the memories we have shared together.</div>
+      <div class="meta-row"><span class="meta-label">🌟 Memory</span><span class="meta-val">[The moments I shared with my classmates.]</span></div>
+      <div class="meta-row"><span class="meta-label">🚀 Dream</span><span class="meta-val">[researcher]</span></div>
+    </div>
+    <div class="skills-row">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">ML</span>
+      <span class="skill-tag">React</span>
+      <span class="skill-tag">Cloud</span>
+    </div>
+  </div>
+  <div class="student-footer">
+    <span class="connect-label">Connect</span>
+    <div class="connect-icons">
+      <span title="LinkedIn">💼</span>
+      <span title="GitHub">💻</span>
+      <span title="Twitter">🐦</span>
+      <span title="Email">✉️</span>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="student-card">
+  <div class="student-photo">
+    <span class="student-number">#ECE-2026-001</span>
+
+    <img 
+      src="GC_2026/kabedemitiku.jpg" 
+      alt="Student Name"
+      style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+    />
+
+    <!-- Shows only if image file is missing -->
+    <div style="display:none;position:absolute;inset:0;flex-direction:column;
+                align-items:center;justify-content:center;gap:8px;color:#8B96A8;">
+      <span style="font-size:3rem;opacity:.25;">👤</span>
+      <span style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;
+                   opacity:.5;font-family:monospace;">Photo Not Found</span>
+    </div>
+
+  </div>
+  <div class="student-body">
+    <div class="student-name">KEBEDE MITIKU</div>
+    <div class="student-id"> · Computer engineer</div>
+    <div class="student-quote">"The best error message is the one that never appears."</div>
+    <div class="student-meta">
+      <div class="meta-row"><span class="meta-label">💬 Last Words</span><span class="meta-val"></span> Congratulations to all my classmates on your success
+May you succeed wherever you go.
+I love and appreciate you all.</div>
+      <div class="meta-row"><span class="meta-label">🌟 Memory</span><span class="meta-val">[The moments I shared with my classmates.]</span></div>
+      <div class="meta-row"><span class="meta-label">🚀 Dream</span><span class="meta-val">[researcher]</span></div>
+    </div>
+    <div class="skills-row">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">ML</span>
+      <span class="skill-tag">React</span>
+      <span class="skill-tag">Cloud</span>
+    </div>
+  </div>
+  <div class="student-footer">
+    <span class="connect-label">Connect</span>
+    <div class="connect-icons">
+      <span title="LinkedIn">💼</span>
+      <span title="GitHub">💻</span>
+      <span title="Twitter">🐦</span>
+      <span title="Email">✉️</span>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<div class="student-card">
+  <div class="student-photo">
+    <span class="student-number">#ECE-2026-001</span>
+
+    <img 
+      src="GC_2026/ramadanabdusebur.jpg" 
+      alt="Student Name"
+      style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+    />
+
+    <!-- Shows only if image file is missing -->
+    <div style="display:none;position:absolute;inset:0;flex-direction:column;
+                align-items:center;justify-content:center;gap:8px;color:#8B96A8;">
+      <span style="font-size:3rem;opacity:.25;">👤</span>
+      <span style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;
+                   opacity:.5;font-family:monospace;">Photo Not Found</span>
+    </div>
+
+  </div>
+  <div class="student-body">
+    <div class="student-name">RAMADAN ABDUSEBUR</div>
+    <div class="student-id"> · Computer engineer</div>
+    <div class="student-quote">"The best error message is the one that never appears."</div>
+    <div class="student-meta">
+      <div class="meta-row"><span class="meta-label">💬 Last Words</span><span class="meta-val"></span> Allah is with the brokenhearted.</div>
+      <div class="meta-row"><span class="meta-label">🌟 Memory</span><span class="meta-val">[The moments I shared with my classmates.]</span></div>
+      <div class="meta-row"><span class="meta-label">🚀 Dream</span><span class="meta-val">[researcher]</span></div>
+    </div>
+    <div class="skills-row">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">ML</span>
+      <span class="skill-tag">React</span>
+      <span class="skill-tag">Cloud</span>
+    </div>
+  </div>
+  <div class="student-footer">
+    <span class="connect-label">Connect</span>
+    <div class="connect-icons">
+      <span title="LinkedIn">💼</span>
+      <span title="GitHub">💻</span>
+      <span title="Twitter">🐦</span>
+      <span title="Email">✉️</span>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="student-card">
+  <div class="student-photo">
+    <span class="student-number">#ECE-2026-001</span>
+
+    <img 
+      src="GC_2026/yosefagimasie.jpg" 
+      alt="Student Name"
+      style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+    />
+
+    <!-- Shows only if image file is missing -->
+    <div style="display:none;position:absolute;inset:0;flex-direction:column;
+                align-items:center;justify-content:center;gap:8px;color:#8B96A8;">
+      <span style="font-size:3rem;opacity:.25;">👤</span>
+      <span style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;
+                   opacity:.5;font-family:monospace;">Photo Not Found</span>
+    </div>
+
+  </div>
+  <div class="student-body">
+    <div class="student-name">YOSEF AGIMASIE</div>
+    <div class="student-id"> · Computer engineer</div>
+    <div class="student-quote">"The best error message is the one that never appears."</div>
+    <div class="student-meta">
+      <div class="meta-row"><span class="meta-label">💬 Last Words</span><span class="meta-val"></span> እኔ እቅድ አወጣሁ  እግዚአብሔር ግን አሳካው።.</div>
+      <div class="meta-row"><span class="meta-label">🌟 Memory</span><span class="meta-val">[The moments I shared with my classmates.]</span></div>
+      <div class="meta-row"><span class="meta-label">🚀 Dream</span><span class="meta-val">[researcher]</span></div>
+    </div>
+    <div class="skills-row">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">ML</span>
+      <span class="skill-tag">React</span>
+      <span class="skill-tag">Cloud</span>
+    </div>
+  </div>
+  <div class="student-footer">
+    <span class="connect-label">Connect</span>
+    <div class="connect-icons">
+      <span title="LinkedIn">💼</span>
+      <span title="GitHub">💻</span>
+      <span title="Twitter">🐦</span>
+      <span title="Email">✉️</span>
+    </div>
+  </div>
+</div>
+
+
+         
+
+
+
+
+
+
+
+
+
+
+
+<div class="student-card">
+  <div class="student-photo">
+    <span class="student-number">#ECE-2026-001</span>
+
+    <img 
+      src="GC_2026/adugnategegne.jpg" 
+      alt="Student Name"
+      style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+    />
+
+    <!-- Shows only if image file is missing -->
+    <div style="display:none;position:absolute;inset:0;flex-direction:column;
+                align-items:center;justify-content:center;gap:8px;color:#8B96A8;">
+      <span style="font-size:3rem;opacity:.25;">👤</span>
+      <span style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;
+                   opacity:.5;font-family:monospace;">Photo Not Found</span>
+    </div>
+
+  </div>
+  <div class="student-body">
+    <div class="student-name">ADUGNA TEGENE</div>
+    <div class="student-id"> · Computer engineer</div>
+    <div class="student-quote">"The best error message is the one that never appears."</div>
+    <div class="student-meta">
+      <div class="meta-row"><span class="meta-label">💬 Last Words</span><span class="meta-val"></span> እኔ እቅድ አወጣሁ  እግዚአብሔር ግን አሳካው።.</div>
+      <div class="meta-row"><span class="meta-label">🌟 Memory</span><span class="meta-val">[The moments I shared with my classmates.]</span></div>
+      <div class="meta-row"><span class="meta-label">🚀 Dream</span><span class="meta-val">[researcher]</span></div>
+    </div>
+    <div class="skills-row">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">ML</span>
+      <span class="skill-tag">React</span>
+      <span class="skill-tag">Cloud</span>
+    </div>
+  </div>
+  <div class="student-footer">
+    <span class="connect-label">Connect</span>
+    <div class="connect-icons">
+      <span title="LinkedIn">💼</span>
+      <span title="GitHub">💻</span>
+      <span title="Twitter">🐦</span>
+      <span title="Email">✉️</span>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="student-card">
+  <div class="student-photo">
+    <span class="student-number">#ECE-2026-001</span>
+
+    <img 
+      src="GC_2026/gebriyeamare.jpg" 
+      alt="Student Name"
+      style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+    />
+
+    <!-- Shows only if image file is missing -->
+    <div style="display:none;position:absolute;inset:0;flex-direction:column;
+                align-items:center;justify-content:center;gap:8px;color:#8B96A8;">
+      <span style="font-size:3rem;opacity:.25;">👤</span>
+      <span style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;
+                   opacity:.5;font-family:monospace;">Photo Not Found</span>
+    </div>
+
+  </div>
+  <div class="student-body">
+    <div class="student-name">GEBRYE AMARE</div>
+    <div class="student-id"> · Computer engineer</div>
+    <div class="student-quote">"The best error message is the one that never appears."</div>
+    <div class="student-meta">
+      <div class="meta-row"><span class="meta-label">💬 Last Words</span><span class="meta-val"></span> God heard my prayers through my mother’s voice..</div>
+      <div class="meta-row"><span class="meta-label">🌟 Memory</span><span class="meta-val">[The moments I shared with my classmates.]</span></div>
+      <div class="meta-row"><span class="meta-label">🚀 Dream</span><span class="meta-val">[researcher]</span></div>
+    </div>
+    <div class="skills-row">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">ML</span>
+      <span class="skill-tag">React</span>
+      <span class="skill-tag">Cloud</span>
+    </div>
+  </div>
+  <div class="student-footer">
+    <span class="connect-label">Connect</span>
+    <div class="connect-icons">
+      <span title="LinkedIn">💼</span>
+      <span title="GitHub">💻</span>
+      <span title="Twitter">🐦</span>
+      <span title="Email">✉️</span>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="student-card">
+  <div class="student-photo">
+    <span class="student-number">#ECE-2026-001</span>
+
+    <img 
+      src="GC_2026/mohammedkassaw.jpg" 
+      alt="Student Name"
+      style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+    />
+
+    <!-- Shows only if image file is missing -->
+    <div style="display:none;position:absolute;inset:0;flex-direction:column;
+                align-items:center;justify-content:center;gap:8px;color:#8B96A8;">
+      <span style="font-size:3rem;opacity:.25;">👤</span>
+      <span style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;
+                   opacity:.5;font-family:monospace;">Photo Not Found</span>
+    </div>
+
+  </div>
+  <div class="student-body">
+    <div class="student-name">MOHAMMED KASSAW</div>
+    <div class="student-id"> · Computer engineer</div>
+    <div class="student-quote">"The best error message is the one that never appears."</div>
+    <div class="student-meta">
+      <div class="meta-row"><span class="meta-label">💬 Last Words</span><span class="meta-val"></span> Alhamdulillah</div>
+      <div class="meta-row"><span class="meta-label">🌟 Memory</span><span class="meta-val">[The moments I shared with my classmates.]</span></div>
+      <div class="meta-row"><span class="meta-label">🚀 Dream</span><span class="meta-val">[researcher]</span></div>
+    </div>
+    <div class="skills-row">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">ML</span>
+      <span class="skill-tag">React</span>
+      <span class="skill-tag">Cloud</span>
+    </div>
+  </div>
+  <div class="student-footer">
+    <span class="connect-label">Connect</span>
+    <div class="connect-icons">
+      <span title="LinkedIn">💼</span>
+      <span title="GitHub">💻</span>
+      <span title="Twitter">🐦</span>
+      <span title="Email">✉️</span>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="student-card">
+  <div class="student-photo">
+    <span class="student-number">#ECE-2026-001</span>
+
+    <img 
+      src="GC_2026/ararsagarema.jpg" 
+      alt="Student Name"
+      style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+    />
+
+    <!-- Shows only if image file is missing -->
+    <div style="display:none;position:absolute;inset:0;flex-direction:column;
+                align-items:center;justify-content:center;gap:8px;color:#8B96A8;">
+      <span style="font-size:3rem;opacity:.25;">👤</span>
+      <span style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;
+                   opacity:.5;font-family:monospace;">Photo Not Found</span>
+    </div>
+
+  </div>
+  <div class="student-body">
+    <div class="student-name">ARARSA GAREMA</div>
+    <div class="student-id"> · Computer engineer</div>
+    <div class="student-quote">"The best error message is the one that never appears."</div>
+    <div class="student-meta">
+      <div class="meta-row"><span class="meta-label">💬 Last Words</span><span class="meta-val"></span> thank you my god❤️🙏we got here,..!🙏we will continue to be successful!</div>
+      <div class="meta-row"><span class="meta-label">🌟 Memory</span><span class="meta-val">[The moments I shared with my classmates.</span></div>
+      <div class="meta-row"><span class="meta-label">🚀 Dream</span><span class="meta-val">[researcher]</span></div>
+    </div>
+    <div class="skills-row">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">ML</span>
+      <span class="skill-tag">React</span>
+      <span class="skill-tag">Cloud</span>
+    </div>
+  </div>
+  <div class="student-footer">
+    <span class="connect-label">Connect</span>
+    <div class="connect-icons">
+      <span title="LinkedIn">💼</span>
+      <span title="GitHub">💻</span>
+      <span title="Twitter">🐦</span>
+      <span title="Email">✉️</span>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="student-card">
+  <div class="student-photo">
+    <span class="student-number">#ECE-2026-001</span>
+
+    <img 
+      src="GC_2026/wadaayala.jpg" 
+      alt="Student Name"
+      style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+    />
+
+    <!-- Shows only if image file is missing -->
+    <div style="display:none;position:absolute;inset:0;flex-direction:column;
+                align-items:center;justify-content:center;gap:8px;color:#8B96A8;">
+      <span style="font-size:3rem;opacity:.25;">👤</span>
+      <span style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;
+                   opacity:.5;font-family:monospace;">Photo Not Found</span>
+    </div>
+
+  </div>
+  <div class="student-body">
+    <div class="student-name">WADA AYYALA</div>
+    <div class="student-id"> · Computer engineer</div>
+    <div class="student-quote">"The best error message is the one that never appears."</div>
+    <div class="student-meta">
+      <div class="meta-row"><span class="meta-label">💬 Last Words</span><span class="meta-val"></span> Hard roads lead to beautiful destinations!"</div>
+      <div class="meta-row"><span class="meta-label">🌟 Memory</span><span class="meta-val">[The moments I shared with my classmates.</span></div>
+      <div class="meta-row"><span class="meta-label">🚀 Dream</span><span class="meta-val">[researcher]</span></div>
+    </div>
+    <div class="skills-row">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">ML</span>
+      <span class="skill-tag">React</span>
+      <span class="skill-tag">Cloud</span>
+    </div>
+  </div>
+  <div class="student-footer">
+    <span class="connect-label">Connect</span>
+    <div class="connect-icons">
+      <span title="LinkedIn">💼</span>
+      <span title="GitHub">💻</span>
+      <span title="Twitter">🐦</span>
+      <span title="Email">✉️</span>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="student-card">
+  <div class="student-photo">
+    <span class="student-number">#ECE-2026-001</span>
+
+    <img 
+      src="GC_2026/jarsokatelo.jpg" 
+      alt="Student Name"
+      style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+    />
+
+    <!-- Shows only if image file is missing -->
+    <div style="display:none;position:absolute;inset:0;flex-direction:column;
+                align-items:center;justify-content:center;gap:8px;color:#8B96A8;">
+      <span style="font-size:3rem;opacity:.25;">👤</span>
+      <span style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;
+                   opacity:.5;font-family:monospace;">Photo Not Found</span>
+    </div>
+
+  </div>
+  <div class="student-body">
+    <div class="student-name">JARSO KATELO</div>
+    <div class="student-id"> · Computer engineer</div>
+    <div class="student-quote">"The best error message is the one that never appears."</div>
+    <div class="student-meta">
+      <div class="meta-row"><span class="meta-label">💬 Last Words</span><span class="meta-val"></span> “Life and Luck is temporary,Grit is permanent and Struggle is refines”</div>
+      <div class="meta-row"><span class="meta-label">🌟 Memory</span><span class="meta-val">[The moments I shared with my classmates.</span></div>
+      <div class="meta-row"><span class="meta-label">🚀 Dream</span><span class="meta-val">[researcher]</span></div>
+    </div>
+    <div class="skills-row">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">ML</span>
+      <span class="skill-tag">React</span>
+      <span class="skill-tag">Cloud</span>
+    </div>
+  </div>
+  <div class="student-footer">
+    <span class="connect-label">Connect</span>
+    <div class="connect-icons">
+      <span title="LinkedIn">💼</span>
+      <span title="GitHub">💻</span>
+      <span title="Twitter">🐦</span>
+      <span title="Email">✉️</span>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="student-card">
+  <div class="student-photo">
+    <span class="student-number">#ECE-2026-001</span>
+
+    <img 
+      src="GC_2026/reta.jpg" 
+      alt="Student Name"
+      style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+    />
+
+    <!-- Shows only if image file is missing -->
+    <div style="display:none;position:absolute;inset:0;flex-direction:column;
+                align-items:center;justify-content:center;gap:8px;color:#8B96A8;">
+      <span style="font-size:3rem;opacity:.25;">👤</span>
+      <span style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;
+                   opacity:.5;font-family:monospace;">Photo Not Found</span>
+    </div>
+
+  </div>
+  <div class="student-body">
+    <div class="student-name">RETA TOLA</div>
+    <div class="student-id"> · Computer engineer</div>
+    <div class="student-quote">"The best error message is the one that never appears."</div>
+    <div class="student-meta">
+      <div class="meta-row"><span class="meta-label">💬 Last Words</span><span class="meta-val"></span> “Goodbye, but not forever”</div>
+      <div class="meta-row"><span class="meta-label">🌟 Memory</span><span class="meta-val">[The moments I shared with my classmates.</span></div>
+      <div class="meta-row"><span class="meta-label">🚀 Dream</span><span class="meta-val">[researcher]</span></div>
+    </div>
+    <div class="skills-row">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">ML</span>
+      <span class="skill-tag">React</span>
+      <span class="skill-tag">Cloud</span>
+    </div>
+  </div>
+  <div class="student-footer">
+    <span class="connect-label">Connect</span>
+    <div class="connect-icons">
+      <span title="LinkedIn">💼</span>
+      <span title="GitHub">💻</span>
+      <span title="Twitter">🐦</span>
+      <span title="Email">✉️</span>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="student-card">
+  <div class="student-photo">
+    <span class="student-number">#ECE-2026-001</span>
+
+    <img 
+      src="GC_2026/samuelaweke.jpg" 
+      alt="Student Name"
+      style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+    />
+
+    <!-- Shows only if image file is missing -->
+    <div style="display:none;position:absolute;inset:0;flex-direction:column;
+                align-items:center;justify-content:center;gap:8px;color:#8B96A8;">
+      <span style="font-size:3rem;opacity:.25;">👤</span>
+      <span style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;
+                   opacity:.5;font-family:monospace;">Photo Not Found</span>
+    </div>
+
+  </div>
+  <div class="student-body">
+    <div class="student-name">Samuel Awoke</div>
+    <div class="student-id"> · Computer engineer</div>
+    <div class="student-quote">"The best error message is the one that never appears."</div>
+    <div class="student-meta">
+      <div class="meta-row"><span class="meta-label">💬 Last Words</span><span class="meta-val"></span> “From struggle to success.”</div>
+      <div class="meta-row"><span class="meta-label">🌟 Memory</span><span class="meta-val">[The moments I shared with my classmates.</span></div>
+      <div class="meta-row"><span class="meta-label">🚀 Dream</span><span class="meta-val">[researcher]</span></div>
+    </div>
+    <div class="skills-row">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">ML</span>
+      <span class="skill-tag">React</span>
+      <span class="skill-tag">Cloud</span>
+    </div>
+  </div>
+  <div class="student-footer">
+    <span class="connect-label">Connect</span>
+    <div class="connect-icons">
+      <span title="LinkedIn">💼</span>
+      <span title="GitHub">💻</span>
+      <span title="Twitter">🐦</span>
+      <span title="Email">✉️</span>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="student-card">
+  <div class="student-photo">
+    <span class="student-number">#ECE-2026-001</span>
+
+    <img 
+      src="GC_2026/muradali.jpg" 
+      alt="Student Name"
+      style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+    />
+
+    <!-- Shows only if image file is missing -->
+    <div style="display:none;position:absolute;inset:0;flex-direction:column;
+                align-items:center;justify-content:center;gap:8px;color:#8B96A8;">
+      <span style="font-size:3rem;opacity:.25;">👤</span>
+      <span style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;
+                   opacity:.5;font-family:monospace;">Photo Not Found</span>
+    </div>
+
+  </div>
+  <div class="student-body">
+    <div class="student-name">MURAD ALI </div>
+    <div class="student-id"> · Computer engineer</div>
+    <div class="student-quote">"The best error message is the one that never appears."</div>
+    <div class="student-meta">
+      <div class="meta-row"><span class="meta-label">💬 Last Words</span><span class="meta-val"></span> “Built memories, earned dreams.”</div>
+      <div class="meta-row"><span class="meta-label">🌟 Memory</span><span class="meta-val">[The moments I shared with my classmates.</span></div>
+      <div class="meta-row"><span class="meta-label">🚀 Dream</span><span class="meta-val">[researcher]</span></div>
+    </div>
+    <div class="skills-row">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">ML</span>
+      <span class="skill-tag">React</span>
+      <span class="skill-tag">Cloud</span>
+    </div>
+  </div>
+  <div class="student-footer">
+    <span class="connect-label">Connect</span>
+    <div class="connect-icons">
+      <span title="LinkedIn">💼</span>
+      <span title="GitHub">💻</span>
+      <span title="Twitter">🐦</span>
+      <span title="Email">✉️</span>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div><!-- /students-grid -->
+
+    <p style="text-align:center;margin-top:40px;font-size:.78rem;color:var(--muted);">
+      ✦ Duplicate the student card template above for each member of your class ✦
+    </p>
+  </div>
+</section>
+
+<!-- ══ MEMORY WALL ══ -->
+<section id="memories">
+  <div class="container">
+    <div class="section-label">03 — Memory Wall</div>
+    <h2 class="section-title">Every <em>Moment</em><br>Counted</h2>
+    <div class="gold-line"></div>
+
+    <div class="memory-grid">
+
+      <div class="memory-cell wide tall">
+        <span class="memory-emoji">📸</span>
+        <span class="memory-label">Add Group Campus Photo</span>
+        <div class="photo-upload-overlay">📷 Upload Photo</div>
+        <span class="memory-tag">#campus</span>
+      </div>
+
+      <div class="memory-cell">
+        <span class="memory-emoji">😂</span>
+        <span class="memory-label">Funniest Moment</span>
+        <div class="photo-upload-overlay">📷 Upload Photo</div>
+        <span class="memory-tag">#fun</span>
+      </div>
+
+      <div class="memory-cell">
+        <span class="memory-emoji">🏆</span>
+        <span class="memory-label">GC cup</span>
+        <div class="photo-upload-overlay">📷 Upload Photo</div>
+        <span class="memory-tag">#achievement</span>
+      </div>
+
+      <div class="memory-cell wide">
+        <span class="memory-emoji">🖥️</span>
+        <span class="memory-label">Best Classroom Moment</span>
+        <div class="photo-upload-overlay">📷 Upload Photo</div>
+        <span class="memory-tag">#classroom</span>
+      </div>
+
+      <div class="memory-cell">
+        <span class="memory-emoji">💼</span>
+        <span class="memory-label">Internship Experience</span>
+        <div class="photo-upload-overlay">📷 Upload Photo</div>
+        <span class="memory-tag">#internship</span>
+      </div>
+
+      <div class="memory-cell">
+        <span class="memory-emoji">🤝</span>
+        <span class="memory-label">Friendship Goals</span>
+        <div class="photo-upload-overlay">📷 Upload Photo</div>
+        <span class="memory-tag">#friendship</span>
+      </div>
+
+      <div class="memory-cell">
+        <span class="memory-emoji">🌙</span>
+        <span class="memory-label">Late Night Coding</span>
+        <div class="photo-upload-overlay">📷 Upload Photo</div>
+        <span class="memory-tag">#grind</span>
+      </div>
+
+      <div class="memory-cell">
+        <span class="memory-emoji">🎤</span>
+        <span class="memory-label">Project Presentation</span>
+        <div class="photo-upload-overlay">📷 Upload Photo</div>
+        <span class="memory-tag">#project</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ TIMELINE ══ -->
+<section id="timeline">
+  <div class="container">
+    <div class="section-label">04 — Timeline Journey</div>
+    <h2 class="section-title">The <em>Road</em><br>We Walked</h2>
+    <div class="gold-line"></div>
+
+    <div class="timeline-track">
+      <div class="timeline-line"></div>
+
+      <div class="tl-item">
+        <div class="tl-left">
+          <div class="tl-year">Year 1 · 2022</div>
+          <div class="tl-title">First Day at University</div>
+          <div class="tl-desc">New faces, new places. Orientation week, campus tours, and the beginning of something extraordinary.</div>
+        </div>
+        <div class="tl-dot major"></div>
+        <div class="tl-right empty"></div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-left empty"></div>
+        <div class="tl-dot"></div>
+        <div class="tl-right">
+          <div class="tl-year">Year 2 · 2015</div>
+          <div class="tl-title">First Programming Assignment</div>
+          <div class="tl-desc">Hello World felt like launching a rocket. We wrote our first lines of code — and broke everything beautifully.</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-left">
+          <div class="tl-year">Year 2 · 2016</div>
+          <div class="tl-title">First Major courses</div>
+          <div class="tl-desc">Group projects, sleepless nights, and the sweet taste of a working application on demo day.</div>
+        </div>
+        <div class="tl-dot"></div>
+        <div class="tl-right empty"></div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-left empty"></div>
+        <div class="tl-dot"></div>
+        <div class="tl-right">
+          <div class="tl-year">Year 3 · 2023</div>
+          <div class="tl-title">survival</div>
+          <div class="tl-desc">72 hours, zero sleep, infinite caffeine. We competed, we built, and we even won.</div>
+        </div>
+      </div>
+
+     
+
+      <div class="tl-item">
+        <div class="tl-left empty"></div>
+        <div class="tl-dot"></div>
+        <div class="tl-right">
+          <div class="tl-year">Year 3–4 · 2016–2017</div>
+          <div class="tl-title">Tprojects and exams</div>
+          <div class="tl-desc">Research proposals, literature reviews, supervisor meetings. The most challenging chapter.</div>
+        </div>
+      </div>
+
+
+
+
+ <div class="tl-item">
+        <div class="tl-left">
+          <div class="tl-year">Year 5· 2018</div>
+          <div class="tl-title">Internships Begin</div>
+          <div class="tl-desc">Real offices, real deadlines, real impact. We brought our university knowledge into the professional world.</div>
+        </div>
+        <div class="tl-dot"></div>
+        <div class="tl-right empty"></div>
+      </div>
+
+
+
+
+      <div class="tl-item">
+        <div class="tl-left">
+          <div class="tl-year">Year 5 · 2018</div>
+          <div class="tl-title">Thesis Defence</div>
+          <div class="tl-desc">Months of work distilled into a single presentation. We walked in nervous and walked out transformed.</div>
+        </div>
+        <div class="tl-dot"></div>
+        <div class="tl-right empty"></div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-left empty"></div>
+        <div class="tl-dot major"></div>
+        <div class="tl-right">
+          <div class="tl-year">2026 ✦ Today</div>
+          <div class="tl-title">Graduation Day 🎓</div>
+          <div class="tl-desc">The caps go up. The tears flow freely. And a new chapter — written entirely by us — begins.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ HIGHLIGHTS ══ -->
+<section id="highlights">
+  <div class="container">
+    <div class="section-label">05 — Department Highlights</div>
+    <h2 class="section-title">What We <em>Built</em><br>&amp; Achieved</h2>
+    <div class="gold-line"></div>
+
+    <div class="highlights-grid">
+
+      <div class="highlight-card">
+        <div class="highlight-icon">🏗️</div>
+        <span class="highlight-stat">[N]+</span>
+        <h3>Student Projects</h3>
+        <p> our class shipped 10+ original projects that solved real problems.</p>
+      </div>
+
+      <div class="highlight-card">
+        <div class="highlight-icon">🥇</div>
+        <span class="highlight-stat">[N]</span>
+        <h3>Awards Won</h3>
+        <p></p>
+      </div>
+
+      <div class="highlight-card">
+        <div class="highlight-icon">📄</div>
+        <span class="highlight-stat">[N]</span>
+        <h3>Research Papers</h3>
+        <p></p>
+      </div>
+
+      <div class="highlight-card">
+        <div class="highlight-icon">🌍</div>
+        <span class="highlight-stat">[N]</span>
+        <h3>Events Attended</h3>
+        <p>.</p>
+      </div>
+
+      <div class="highlight-card">
+        <div class="highlight-icon">🤝</div>
+        <span class="highlight-stat">[N]+</span>
+        <h3>Internship Companies</h3>
+        <p>Our graduates interned at 10+ companies across tech, finance, healthcare, and government sectors.</p>
+      </div>
+
+      <div class="highlight-card">
+        <div class="highlight-icon">🎖️</div>
+        <span class="highlight-stat">100%</span>
+        <h3>Graduation Rate</h3>
+        <p>Every single one of us crossed the finish line. No one left behind. Class of 2026 — complete.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ QUOTES ══ -->
+<section id="quotes">
+  <div class="container">
+    <div class="section-label">06 — Graduation Quotes</div>
+    <h2 class="section-title">Words That <em>Stay</em><br>With Us</h2>
+    <div class="gold-line"></div>
+
+    <div class="quotes-grid">
+
+      <div class="quote-card quote-featured">
+        <p class="quote-text">
+          "The future belongs to those who learn more skills and combine them in creative ways."
+        </p>
+        <span class="quote-attr">— Robert Greene</span>
+      </div>
+
+      <div class="quote-card">
+        <p class="quote-text">
+          "It always seems impossible until it is done. You proved that every semester."
+        </p>
+        <span class="quote-attr">— Adapted from Nelson Mandela</span>
+      </div>
+
+      <div class="quote-card">
+        <p class="quote-text">
+          "Education is not the filling of a pail, but the lighting of a fire. Yours burns brilliantly."
+        </p>
+        <span class="quote-attr">— W.B. Yeats</span>
+      </div>
+
+      <div class="quote-card">
+        <p class="quote-text">
+          "The people who are crazy enough to think they can change the world are the ones who do."
+        </p>
+        <span class="quote-attr">— Steve Jobs</span>
+      </div>
+
+      <div class="quote-card">
+        <p class="quote-text">
+          "Don't watch the clock — do what it does. Keep going. Your best code is still ahead."
+        </p>
+        <span class="quote-attr">— Sam Levenson (adapted)</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ FUTURE DREAMS ══ -->
+<section id="future">
+  <div class="container">
+    <div class="section-label">07 — Future Dreams</div>
+    <h2 class="section-title">Where We'll <em>Be</em><br>in Five Years</h2>
+    <p class="future-intro">We dared to dream. Here's what the Class of 2026 sees on the horizon.</p>
+    <div class="gold-line"></div>
+
+    <div class="future-grid">
+
+      <div class="future-card">
+        <div class="future-icon">🤖</div>
+        <h4>AI Engineer</h4>
+        <p>Building the intelligent systems that will reshape industries and redefine human possibility.</p>
+        <div class="future-year">→ 2031</div>
+      </div>
+
+      <div class="future-card">
+        <div class="future-icon">🚀</div>
+        <h4>Tech Entrepreneur</h4>
+        <p>Founding startups that solve Africa's biggest challenges with homegrown technology.</p>
+        <div class="future-year">→ 2031</div>
+      </div>
+
+      <div class="future-card">
+        <div class="future-icon">🔐</div>
+        <h4>Cybersecurity Expert</h4>
+        <p>Protecting digital infrastructure and championing privacy in an increasingly connected world.</p>
+        <div class="future-year">→ 2031</div>
+      </div>
+
+      <div class="future-card">
+        <div class="future-icon">🌐</div>
+        <h4>Software Architect</h4>
+        <p>Designing the systems that power millions — with elegance, scale, and purpose.</p>
+        <div class="future-year">→ 2031</div>
+      </div>
+
+      <div class="future-card">
+        <div class="future-icon">📊</div>
+        <h4>Data Scientist</h4>
+        <p>Turning raw numbers into decisions, patterns into policy, and insights into action.</p>
+        <div class="future-year">→ 2031</div>
+      </div>
+
+      <div class="future-card">
+        <div class="future-icon">🎓</div>
+        <h4>PhD &amp; Researcher</h4>
+        <p>Pushing the boundaries of knowledge and contributing back to the academic world that shaped us.</p>
+        <div class="future-year">→ 2031</div>
+      </div>
+
+      <div class="future-card">
+        <div class="future-icon">🏛️</div>
+        <h4>Tech Policy &amp; Gov</h4>
+        <p>Bridging technology and governance to build a smarter, fairer digital society.</p>
+        <div class="future-year">→ 2031</div>
+      </div>
+
+      <div class="future-card">
+        <div class="future-icon">🎮</div>
+        <h4>Game Developer</h4>
+        <p>Creating worlds, stories, and experiences that entertain, educate, and inspire.</p>
+        <div class="future-year">→ 2031</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ STATS ══ -->
+<section id="stats">
+  <div class="container">
+    <div class="section-label">08 — Class Statistics</div>
+    <h2 class="section-title">The <em>Numbers</em><br>Behind Our Class</h2>
+    <div class="gold-line"></div>
+
+    <div class="stats-grid">
+
+      <div class="stat-card">
+        <h3>Dream Job Breakdown</h3>
+        <div class="bar-row">
+          <div class="bar-item">
+            <div class="bar-meta"><span class="bar-label">Software Engineer</span><span class="bar-pct">38%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:38%"></div></div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-meta"><span class="bar-label">AI / ML Engineer</span><span class="bar-pct">24%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:24%"></div></div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-meta"><span class="bar-label">Entrepreneur / Founder</span><span class="bar-pct">18%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:18%"></div></div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-meta"><span class="bar-label">Data Scientist</span><span class="bar-pct">12%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:12%"></div></div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-meta"><span class="bar-label">Other / Research</span><span class="bar-pct">8%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:8%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <h3>Favourite Programming Language</h3>
+        <div class="lang-dots">
+          <div class="lang-item">
+            <div class="lang-dot" style="background:#3776AB"></div>
+            <span class="lang-name">Python</span>
+            <span class="lang-votes">42 votes</span>
+          </div>
+          <div class="lang-item">
+            <div class="lang-dot" style="background:#F0DB4F"></div>
+            <span class="lang-name">JavaScript</span>
+            <span class="lang-votes">28 votes</span>
+          </div>
+          <div class="lang-item">
+            <div class="lang-dot" style="background:#E76F00"></div>
+            <span class="lang-name">Java</span>
+            <span class="lang-votes">19 votes</span>
+          </div>
+          <div class="lang-item">
+            <div class="lang-dot" style="background:#7E57C2"></div>
+            <span class="lang-name">Kotlin / Dart</span>
+            <span class="lang-votes">14 votes</span>
+          </div>
+          <div class="lang-item">
+            <div class="lang-dot" style="background:#00ADD8"></div>
+            <span class="lang-name">Go / Rust</span>
+            <span class="lang-votes">9 votes</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <h3>Most Unforgettable Memories</h3>
+        <div class="bar-row">
+          <div class="bar-item">
+            <div class="bar-meta"><span class="bar-label">mid and final exam</span><span class="bar-pct">45%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:45%"></div></div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-meta"><span class="bar-label">Group Project assignments Chaos</span><span class="bar-pct">30%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:30%"></div></div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-meta"><span class="bar-label">Campus Life</span><span class="bar-pct">15%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:15%"></div></div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-meta"><span class="bar-label">Thesis Defence Day</span><span class="bar-pct">10%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:10%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <h3>Fun Facts About Our Class</h3>
+        <div class="fun-facts">
+          <div class="fun-fact">
+            <span class="num">40+</span>
+            <span class="label">Total graduates in the class</span>
+          </div>
+          <div class="fun-fact">
+            <span class="num">2k+</span>
+            <span class="label">Lines of code written</span>
+          </div>
+          <div class="fun-fact">
+            <span class="num">infinite</span>
+            <span class="label">Cups of coffee consumed</span>
+          </div>
+          <div class="fun-fact">
+            <span class="num">2k+</span>
+            <span class="label">All-nighters survived</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ GOODBYE ══ -->
+<section id="goodbye">
+  <div class="container">
+    <div class="section-label" style="text-align:center">10 — Final Goodbye</div>
+
+    <h2 class="goodbye-quote">
+      "Though we graduate, our memories remain forever."
+    </h2>
+    <p class="goodbye-sub">electrical and computer engineering  · Class of 2026 · HARAMAYA UNIVERSITY</p>
+
+    <!-- Signature grid -->
+    <div class="sig-grid">
+      <div class="sig-box"><span class="sig-name">[ NAHOM]<br>NAHOME</span></div>
+      <div class="sig-box"><span class="sig-name">[ RUTH   ]<br>RUTH</span></div>
+      <div class="sig-box"><span class="sig-name">[BALI ]<br>BALI</span></div>
+      <div class="sig-box"><span class="sig-name">[BINIYAM]<br>BINIYAM</span></div>
+     
+    </div>
+
+    <!-- Farewell note -->
+    <div class="farewell-note">
+      The halls will fill with new voices, the labs with new code, and the whiteboards with new equations.
+      But no class will ever be quite like us. We came as strangers and we leave as a story — 
+      one worth telling for a very long time. Wherever the world takes you, 
+      carry this with you: you are a ELECTRICAL ENGINEER . You solve things.
+      Now go solve everything.
+    </div>
+
+    <div class="class-badge">✦ ECE · Class of 2026 · Memories That Never Fade ✦</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span>school of electrical &amp; Engineering · Class of 2026</span>
+  <span>Designed with ♥ by the graduating class students </span>
+</footer>
+
+</body>
+</html>
